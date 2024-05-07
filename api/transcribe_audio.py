@@ -5,6 +5,7 @@ from io import BytesIO
 from pydub import AudioSegment
 
 app = Flask(__name__)
+app.config['MAX_CONTENT_LENGTH'] = 25 * 1000 * 1000
 
 # Fetch the OpenAI API key from environment variables
 openai.api_key = os.environ.get('OPENAI_API_KEY', 'Your_Default_API_Key_if_any')
