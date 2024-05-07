@@ -9,7 +9,7 @@ app = Flask(__name__)
 # Fetch the OpenAI API key from environment variables
 openai.api_key = os.environ.get('OPENAI_API_KEY', 'Your_Default_API_Key_if_any')
 
-@app.route('/upload', methods=['POST'])
+@app.route('/', methods=['POST'])
 def upload_file():
     if 'file' not in request.files:
         return "No file part", 400
